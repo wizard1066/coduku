@@ -13,6 +13,9 @@
 		7BFC94532427897E002F3192 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7BFC94522427897E002F3192 /* Assets.xcassets */; };
 		7BFC94562427897E002F3192 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7BFC94552427897E002F3192 /* Preview Assets.xcassets */; };
 		7BFC94592427897E002F3192 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BFC94572427897E002F3192 /* LaunchScreen.storyboard */; };
+		7BFC94842428DB94002F3192 /* Crypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFC94832428DB94002F3192 /* Crypto.swift */; };
+		7BFC94862428DED8002F3192 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFC94852428DED8002F3192 /* Storage.swift */; };
+		7BFC9488242906E3002F3192 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFC9487242906E3002F3192 /* Common.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,10 @@
 		7BFC94552427897E002F3192 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7BFC94582427897E002F3192 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7BFC945A2427897E002F3192 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7BFC94822428D013002F3192 /* coduku.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = coduku.entitlements; sourceTree = "<group>"; };
+		7BFC94832428DB94002F3192 /* Crypto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crypto.swift; sourceTree = SOURCE_ROOT; };
+		7BFC94852428DED8002F3192 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		7BFC9487242906E3002F3192 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,9 +63,13 @@
 		7BFC944B24278979002F3192 /* coduku */ = {
 			isa = PBXGroup;
 			children = (
+				7BFC94832428DB94002F3192 /* Crypto.swift */,
+				7BFC94822428D013002F3192 /* coduku.entitlements */,
 				7BFC944C24278979002F3192 /* AppDelegate.swift */,
 				7BFC944E24278979002F3192 /* SceneDelegate.swift */,
 				7BFC945024278979002F3192 /* ContentView.swift */,
+				7BFC9487242906E3002F3192 /* Common.swift */,
+				7BFC94852428DED8002F3192 /* Storage.swift */,
 				7BFC94522427897E002F3192 /* Assets.xcassets */,
 				7BFC94572427897E002F3192 /* LaunchScreen.storyboard */,
 				7BFC945A2427897E002F3192 /* Info.plist */,
@@ -149,6 +160,9 @@
 				7BFC944D24278979002F3192 /* AppDelegate.swift in Sources */,
 				7BFC944F24278979002F3192 /* SceneDelegate.swift in Sources */,
 				7BFC945124278979002F3192 /* ContentView.swift in Sources */,
+				7BFC94842428DB94002F3192 /* Crypto.swift in Sources */,
+				7BFC9488242906E3002F3192 /* Common.swift in Sources */,
+				7BFC94862428DED8002F3192 /* Storage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,11 +298,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = coduku/coduku.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"coduku/Preview Content\"";
 				DEVELOPMENT_TEAM = CWGS87U262;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = coduku/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -304,11 +320,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = coduku/coduku.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"coduku/Preview Content\"";
 				DEVELOPMENT_TEAM = CWGS87U262;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = coduku/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

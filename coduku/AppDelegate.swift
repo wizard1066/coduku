@@ -11,11 +11,14 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     // Override point for customization after application launch.
+    registerForNotifications()
     return true
+  }
+  
+  func applicationWillTerminate(_ application: UIApplication) {
+    //
   }
 
   // MARK: UISceneSession Lifecycle
@@ -33,5 +36,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   }
 
 
+}
+
+extension AppDelegate: UNUserNotificationCenterDelegate {
+
+// code 1
+func registerForNotifications() {
+  let center  = UNUserNotificationCenter.current()
+  center.delegate = self
+  center.requestAuthorization(options: [.provisional]) { (granted, error) in
+    if error == nil{
+      DispatchQueue.main.async {
+        UIApplication.shared.registerForRemoteNotifications()
+      }
+    } else {
+      print("error ",error)
+    }
+  }
+}
+
+  func application( _ application: UIApplication,
+                    didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+    let tokenParts = deviceToken.map { data in String(format: "%02.2hhx", data) }
+    token = tokenParts.joined()
+    print("Device Token: \n\(token)\n")
+  }
+  
+  func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+    print("failed error ",error)
+  }
 }
 
